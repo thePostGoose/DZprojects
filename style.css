@@ -1,0 +1,83 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav{
+  background: linear-gradient(to top, rgb(149, 183, 202), rgb(211, 226, 235), rgb(203, 229, 245));
+  overflow: hidden;
+}
+.main-nav__menu {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  min-width: 320px;
+  width: 20%;
+  margin: auto;
+  height: 100vh;
+  font-family: 'Dosis', sans-serif;
+}
+.main-nav__link {
+  position: relative;
+  text-align: center;
+  margin: 1em;
+  padding: 2em;
+  font-size: 1.5rem;
+  background: linear-gradient(45deg, rgb(230, 227, 227), rgb(163, 160, 160));
+  color: rgb(75, 92, 102);
+  cursor: pointer;
+  border-radius: 1em;
+  transform: skewX(-45deg);
+  border: 2px solid rgb(129, 126, 126);
+  text-decoration: none;
+  color: rgb(51, 126, 126);
+  animation-name: from-right;
+  animation-duration: 2.5s;
+  animation-timing-function: ease-in-out;
+}
+.main-nav__link:active {
+  background: linear-gradient(-135deg, rgb(230, 227, 227), rgb(163, 160, 160));
+}
+
+.main-nav__link span{
+  display: block;
+  transform: skewX(45deg);
+}
+.main-nav__link:nth-child(2n) {
+  transform: skew(45deg);
+  background: linear-gradient(135deg, rgb(230, 227, 227), rgb(163, 160, 160));
+  animation-name: from-left;
+  animation-duration: 2.5s;
+  animation-timing-function: ease-in-out;
+}
+.main-nav__link:nth-child(2n):active {
+  background: linear-gradient(-45deg, rgb(230, 227, 227), rgb(163, 160, 160));
+}
+.main-nav__link:nth-child(2n) span{
+  transform: skew(-45deg);
+}
+
+@keyframes from-left{
+  0% {
+    opacity: 0;
+    left: -1000px;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
+@keyframes from-right{
+  0% {
+    opacity: 0;
+    left: 1000px;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
